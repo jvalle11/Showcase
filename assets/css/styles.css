@@ -9,8 +9,11 @@ input {
   user-select: text; /* Standard syntax */
 }
 
+
+
 body {
   font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
+  font-family: 'Roboto', sans-serif;
 
   height: 20px;
   padding: 0;
@@ -22,19 +25,31 @@ body {
 }
 
 .background-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      max-width: 1920px;
-      z-index: -1; /* Set a lower z-index so it's behind the content */
-      background-repeat: no-repeat;
-      background-size: 400% 400%;
-      background-image: linear-gradient(to bottom right, red, orange, blue, indigo, violet);
-      animation: gradient 10s ease infinite;
-      pointer-events: none;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  z-index: -1; /* Set a lower z-index so it's behind the content */
+  background-repeat: no-repeat;
+  background-size: 400% 400%;
+  background-image: linear-gradient(to bottom right, #f0f0f0, #d9d9d9, #bfbfbf, #a6a6a6);
+  animation: gradient 4s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
     /* White element to cover the background when the user scrolls */
     .white-box {
@@ -174,7 +189,7 @@ body {
     }
     
     .project-card {
-      height: 325px;
+      height: auto;
       padding: 20px;
       margin: 10px;
       border: 1px solid #ccc;
@@ -241,17 +256,7 @@ body {
   }
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+
 
 
 /* hide main scrollbar */
@@ -279,11 +284,21 @@ body::-webkit-scrollbar {
 /* name / title */
 .title1 {
   font-size: 104px;
-  font-weight: 100;
+  font-weight: 50;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding-top: 8%;
+}
+
+/* Style for the subtitle text */
+.subtitle {
+  font-size: 12px; /* Smaller than the typing effect text */
+  font-weight: 200;
   color: #ffffff;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  padding-top: 8%;
+  margin-top: -10px; /* Adjust the margin as needed */
 }
 
 div.section 
@@ -894,10 +909,10 @@ progress::-moz-progress-bar {
 
 /* CODE PEN HOME PAGE CORNER SLIDE */
 
-.box2 {
+.box, .box2 {
   display: flex;
-  zoom: 1.5;
-  margin-left: 80%;
+  zoom: 1; /* Adjust the zoom level to make the text smaller */
+  margin-left: 100%;
   margin-top: 0%;
   position: fixed;
   top: 20px;
@@ -905,45 +920,22 @@ progress::-moz-progress-bar {
   z-index: 9999;
 }
 
-.box {
-	display: flex;
-  zoom: 1.5;
-  margin-left: 80%;
-  margin-top: 0%;
-  position: fixed;
-  top: 20px;
-  right: -20px;
-  z-index: 9999;
-}
-
-.box .inner {
-	width: 160px;
-	height: 70px;
+.box .inner, .box2 .inner {
+  width: 225px; /* Adjust the width as needed */
+  height: 55px; /* Adjust the height as needed */
   padding-top: 2%;
-	line-height: 50%;
-	font-size: 2.5em;
-	font-family: sans-serif;
-	font-weight: bold;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.box2 .inner {
-	width: 160px;
-	height: 70px;
-  padding-top: 9%;
-	line-height: -200%;
-	font-size: 2.2em;
-	font-family: sans-serif;
-	font-weight: bold;
-	white-space: nowrap;
-	overflow: hidden;
+  line-height: 50%;
+  font-size: 1.8em; /* Adjust the font size to make the text smaller */
+  font-family: sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .box .inner span {
   position: absolute;
   animation: marquee 4s linear infinite; 
-  /* both welcome phrases */
+  top: 5px; /* Position the first text at the top */
 }
 
 .box2 .inner span {
@@ -951,7 +943,7 @@ progress::-moz-progress-bar {
   animation: marquee2 4s linear infinite; /* Use a different animation for the second text */
   animation-delay: 1.8s;
   right: 100%;
-  /* both second phrases */
+  top: 30px; /* Position the second text below the first text */
 }
 
 .box .inner:first-child span {
@@ -996,14 +988,14 @@ progress::-moz-progress-bar {
 }
 
 @keyframes marquee {
-	from {
-		left: 100%;
-	}
-
-	to {
-		left: -350%;
-	}
+  from {
+    left: 100%;
+  }
+  to {
+    left: -350%;
+  }
 }
+
 @keyframes marquee2 {
   from {
     left: -350%; /* Start from the same position as the first text */
@@ -1025,31 +1017,63 @@ html.disable-cursor-effect {
   cursor: auto;
   
 }
-/* Style for the toggle button */
-#toggleCursorEffect {
+/* Style for the toggle switch container */
+.toggle-switch {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  color: #ffffff;
-  background-color: #429dff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column; /* Change direction to column */
+  align-items: center;
+}
+
+/* Hide the default checkbox */
+.toggle-input {
+  display: none;
+}
+
+/* Style for the cursor effect slider switch */
+.toggle-label {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  z-index: 9999;
 }
 
-/* Style for the button when hovered */
-#toggleCursorEffect:hover {
-  background-color: #0155af;
-  transform: scale(1.1);
+/* Style for the slider knob */
+.toggle-label::after {
+  content: '';
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
 }
 
-/* Style for the disabled button when hovered */
-#toggleCursorEffect.disabled:hover {
-  background-color: #cccccc;
+/* Change background color and position of the knob when checked */
+.toggle-input:checked + .toggle-label {
+  background-color: #429dff;
+}
+
+.toggle-input:checked + .toggle-label::after {
+  transform: translateX(30px);
+}
+
+/* Style for the toggle text */
+.toggle-text {
+  margin-top: 5px; /* Add margin to the top */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #333;
 }
 
 .colorbox {
