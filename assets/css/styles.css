@@ -34,7 +34,7 @@ body {
   z-index: -1; /* Set a lower z-index so it's behind the content */
   background-repeat: no-repeat;
   background-size: 400% 400%;
-  background-image: linear-gradient(to bottom right, #f0f0f0, #d9d9d9, #bfbfbf, #a6a6a6);
+  background-image: linear-gradient(to bottom right, #d0d0d0, #b0b0b0, #909090, #707070);
   animation: gradient 4s ease infinite;
   pointer-events: none;
 }
@@ -95,13 +95,13 @@ body {
       position: absolute;
       top: 20%; /* Adjust the value to control the vertical position of the image */
       left: 10%; /* Adjust the value to control the horizontal position of the image */
-      width: 450px; /* Adjust the width of the image */
-      height: 450px; /* Adjust the height of the image */
+      width: 550px; /* Adjust the width of the image */
+      height: 550px; /* Adjust the height of the image */
       background-image: url('gradPic.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual file path or URL of the image */
       background-size: cover;
       background-position: center;
       border-radius: 50%; /* Use half of the width and height to create a circular shape */
-      border: 3px solid #e6e6e6; /* Add a border to create the bubble effect */
+      border: 3px solid #868686; /* Add a border to create the bubble effect */
       z-index: 9999;
       }
 
@@ -265,13 +265,15 @@ body::-webkit-scrollbar {
 }
  
 /* typing effect */
-.typing-effect 
-{
+.typing-effect {
   font-size: 20px;
   font-weight: 100;
   color: #ffffff;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+  visibility: visible; /* Ensure the element is always visible */
+  height: 24px; /* Set a fixed height to prevent movement */
 }
 /* top text that says user name */
 .usernametext { 
@@ -283,22 +285,23 @@ body::-webkit-scrollbar {
 
 /* name / title */
 .title1 {
-  font-size: 104px;
-  font-weight: 50;
+  font-size: 95px;
+  font-weight: 100;
   color: #ffffff;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
   padding-top: 8%;
 }
 
 /* Style for the subtitle text */
 .subtitle {
-  font-size: 12px; /* Smaller than the typing effect text */
-  font-weight: 200;
+  font-size: 16px; /* Smaller than the typing effect text */
+  font-weight: 10;
   color: #ffffff;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   margin-top: -10px; /* Adjust the margin as needed */
+  margin-bottom: 25px;
 }
 
 div.section 
@@ -912,11 +915,9 @@ progress::-moz-progress-bar {
 .box, .box2 {
   display: flex;
   zoom: 1; /* Adjust the zoom level to make the text smaller */
-  margin-left: 100%;
+  margin-left: 78%;
   margin-top: 0%;
   position: fixed;
-  top: 20px;
-  right: -20px;
   z-index: 9999;
 }
 
